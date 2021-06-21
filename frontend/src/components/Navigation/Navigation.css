@@ -1,0 +1,26 @@
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #333;
+    list-style-type: none;
+    height: 46px;
+    margin: 0;
+    padding: none;
+}
+.logo-image {
+    display:flex;
+    justify-content: flex-start;
+    position:relative;
+    width: 100px;
+    height: 46px;
+    margin-top: 0;
+}
+body{
+    margin-top: 0;
+}
+.nav-right{
+    display: flex;
+    position:relative;
+    justify-content: flex-end;
+}

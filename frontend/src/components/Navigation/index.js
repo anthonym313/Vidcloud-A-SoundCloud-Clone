@@ -11,13 +11,13 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton user={sessionUser}/>
     );
   } else {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Create Account</NavLink>
+        <NavLink to="/signup" >Create Account</NavLink>
       </>
     );
   }
@@ -25,11 +25,19 @@ function Navigation({ isLoaded }){
   return (
     <ul>
       <li>
-        <NavLink exact to="/"><img src='/logo.png' alt='Home'/></NavLink>
+        <NavLink exact to="/"><img className='logo-image nav-left'  src='/logo.png' alt='Home'/></NavLink>
+      </ li>
+      <li className='nav-right'>
         {isLoaded && sessionLinks}
-      </li>
+      </li>    
+       
+       
+
+        
     </ul>
   );
 }
+        
+     
 
 export default Navigation;
