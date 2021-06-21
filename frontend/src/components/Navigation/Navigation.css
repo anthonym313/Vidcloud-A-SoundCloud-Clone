@@ -4,7 +4,7 @@ ul{
     justify-content: space-between;
     background-color: #333;
     list-style-type: none;
-    height: 46px;
+    max-height: 46px;
     margin: 0;
     padding: none;
 }
