@@ -20,6 +20,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path='users/:id'>
+          </Route>
+          <Route path='videos/:id'>
+
+          </Route>
         </Switch>
       )}
     </>
