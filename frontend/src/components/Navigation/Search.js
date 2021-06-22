@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
-import youtubeSearch from '../../backend/routes/api/search.js'
+import youtubeSearch from '../Search/Search'
 
-export default SearchBar = ()=>{
-    const [searchTerm, setSearchTerm] = useState('')
+export default function Search() {
+    const [searchTerm, setSearchTerm] = useState('');
 
     const submitHelper = async (searchTerm)=>{
         const response = await youtubeSearch.get('/search',{
@@ -25,5 +25,3 @@ export default SearchBar = ()=>{
         </>
     )
 }
-
-
