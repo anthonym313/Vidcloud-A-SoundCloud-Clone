@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import youtubeSearch from '../backend/routes/api/search.js'
+import youtubeSearch from '../../backend/routes/api/search.js'
 
 export default SearchBar = ()=>{
     const [searchTerm, setSearchTerm] = useState('')
@@ -27,4 +27,3 @@ export default SearchBar = ()=>{
 }
 
 
-apiKey ("AIzaSyBtrnMQafU9n6ImSvxWjdx33jpmY7cBCTc")

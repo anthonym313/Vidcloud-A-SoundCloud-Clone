@@ -5,7 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SearchBar from './Search'
 import './Navigation.css';
-import youtubeSearch from 'backend/routes/api/search.js'
+
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
