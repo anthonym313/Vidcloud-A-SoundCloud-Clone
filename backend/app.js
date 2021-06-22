@@ -55,7 +55,12 @@ app.use((err, _req, _res, next) => {
     }
     next(err);
 });
-
+// function init(){
+//     gapi.client.setApiKey("AIzaSyBtrnMQafU9n6ImSvxWjdx33jpmY7cBCTc");
+//     gapi.client.load("youtube", "v3",()=> {
+//         //youtube api is ready
+//     })
+// }
 // Error formatter
 app.use((err, _req, res, _next) => {
     res.status(err.status || 500);
