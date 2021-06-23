@@ -21,6 +21,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route path='users/:id'>
+            {/* <UserProfilePage/> */}
           </Route>
           <Route path='videos/:id'>
 

@@ -5,7 +5,7 @@ export default function Search() {
     const [searchTerm, setSearchTerm] = useState('');
     const [videos, setVideos] = useState([])
     
-    const apiKey = "AIzaSyBtrnMQafU9n6ImSvxWjdx33jpmY7cBCTc";
+    const apiKey = "";
     const submitHelper= async (searchTerm)=>{
         const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&type=video&key=${apiKey}`)
         const result = await response.json()
