@@ -1,9 +1,8 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 // import {loadClient, executing} from './Search';
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [videos, setVideos] = useState([])
     
     const apiKey = "";
     const submitHelper= async (searchTerm)=>{
