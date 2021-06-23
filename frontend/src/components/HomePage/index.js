@@ -14,16 +14,18 @@ export default function HomePage(){
             <div className="trending_video_container">
                 <div className="trending_video_header">See what's been trending for free in the VidCloud community</div>
                 <div className="trending_gallery_container">
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
-                    <div className="trending_video"></div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                    <div className="trending_video">thumbnail</div>
+                   
+                 
                 </div>
             </div>
 
