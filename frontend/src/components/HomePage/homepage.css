@@ -6,21 +6,31 @@
  
     
 }
-.hompeage_banner_container{
- 
+.homepage_banner_container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
 }
 
-.hompeage_banner_photo{
+.hompepage_banner_photo{
     display:flex;
     justify-content: center;
     height: 450px;
     text-align: center;
-    z-index: -5;
-}
-.hompeage_banner_text{
-    display:block;
-    position:relative;
-    padding-bottom: 40px
-
+    z-index: -500;
 }
 
+
+.homepage_banner_text{
+    display: flex;
+    position: absolute;
+    z-index: 3000;
+    color:white;
+    text-align: center;
+    font-size:36px;
+    font-weight:100;
+    font-family:  'Lucida Grande','Lucida Sans', 'Lucida Sans Regular';
+}
