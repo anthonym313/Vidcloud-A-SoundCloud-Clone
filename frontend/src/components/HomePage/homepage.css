@@ -26,6 +26,7 @@
 
 .homepage_banner_text{
     display: flex;
+    flex-direction: column;
     position: absolute;
     z-index: 3000;
     color:white;
@@ -33,4 +34,9 @@
     font-size:36px;
     font-weight:100;
     font-family:  'Lucida Grande','Lucida Sans', 'Lucida Sans Regular';
+}
+.homepage_banner_text>p{
+    font-size:18px;
+    font-family:  'Lucida Grande','Lucida Sans', 'Lucida Sans Regular';
+    word-wrap: break-word;
 }
