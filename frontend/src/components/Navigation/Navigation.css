@@ -24,6 +24,9 @@ body{
     position:relative;
     justify-content: flex-end;
 }
+.nav-search{
+    
+}
 .search_input{
     color:#666;
     background-color: #e5e5e5;
@@ -31,4 +34,8 @@ body{
     height:28px;
     border-color: #333;
     border-radius: 3px;
+    width: 400px;
+}
+.search_input+button{
+
 }

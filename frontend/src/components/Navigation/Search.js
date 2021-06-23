@@ -17,8 +17,8 @@ export default function Search() {
     return (
         <>
             <form className='nav-search' onSubmit={handleSubmit}>
-                <input onChange={()=>setSearchTerm(searchTerm)} type='search' placeholder='Search' autoComplete='off' className="search_input" /> 
-                <button className='nav-search__button' type='submit'>Search</button>
+                <input onChange={()=>setSearchTerm(searchTerm)} type='search' placeholder='Search A Video ...' autoComplete='off' className="search_input" /> 
+                <button className='nav-search__button' type='submit'>Go</button>
             </form>
             
         </>
