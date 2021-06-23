@@ -1,5 +1,7 @@
 .homepage_container{
     display:flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
     justify-content: center;
     width:100%;
     margin:auto;
@@ -38,5 +40,16 @@
 .homepage_banner_text>p{
     font-size:18px;
     font-family:  'Lucida Grande','Lucida Sans', 'Lucida Sans Regular';
-    word-wrap: break-word;
+}
+.trending_video_container{
+    padding:10px;
+    display: flex;
+    justify-content: center;
+
+}
+.trending_video_header{
+    font-size:24px;
+    font-weight:100;
+    font-family: 'Lucida Grande','Lucida Sans', 'Lucida Sans Regular';
+    padding-top:20
 }
