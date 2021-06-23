@@ -1,0 +1,26 @@
+.homepage_container{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    margin:auto;
+ 
+    
+}
+.hompeage_banner_container{
+ 
+}
+
+.hompeage_banner_photo{
+    display:flex;
+    justify-content: center;
+    height: 450px;
+    text-align: center;
+    z-index: -5;
+}
+.hompeage_banner_text{
+    display:block;
+    position:relative;
+    padding-bottom: 40px
+
+}
+

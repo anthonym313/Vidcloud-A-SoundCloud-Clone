@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import HomePage from "./components/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,14 +18,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
-          </Route>
-          <Route path='users/:id'>
-            {/* <UserProfilePage/> */}
-          </Route>
-          <Route path='videos/:id'>
-
           </Route>
         </Switch>
       )}
