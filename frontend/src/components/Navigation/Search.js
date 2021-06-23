@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-// import {loadClient, executing} from './Search';
+import './Navigation.css'
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +17,7 @@ export default function Search() {
     return (
         <>
             <form className='nav-search' onSubmit={handleSubmit}>
-                <input onChange={()=>setSearchTerm(searchTerm)} type='search' placeholder='Search' autoComplete='off' /> 
+                <input onChange={()=>setSearchTerm(searchTerm)} type='search' placeholder='Search' autoComplete='off' className="search_input" /> 
                 <button className='nav-search__button' type='submit'>Search</button>
             </form>
             

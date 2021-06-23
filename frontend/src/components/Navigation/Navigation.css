@@ -24,3 +24,11 @@ body{
     position:relative;
     justify-content: flex-end;
 }
+.search_input{
+    color:#666;
+    background-color: #e5e5e5;
+    padding:5px 7px;
+    height:28px;
+    border-color: #333;
+    border-radius: 3px;
+}
