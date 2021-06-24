@@ -1,20 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import './homepage.css'
-
-
-// export async function youtubeTrending(){
-    
-//     try{
-
-//         const response = await fetch('/api/')
-//         const result = await response.json()
-//         return{
-//             props:{result}
-//         }
-//     }catch(err){console.log(err)}
-//  }
  
 export default function HomePage(){
+    const [data,setdata] = useState(null)
+
   useEffect(()=>{
     async function youtubeTrending(){
     
@@ -22,12 +11,13 @@ export default function HomePage(){
         
                 const response = await fetch('/api/')
                 const result = await response.json()
-                console.log(result.items)
+                setdata(result.items);
                 
             }catch(err){console.log(err)}
          }
          youtubeTrending()
   },[])
+  console.log(data, 'our data')
     return (
         <div className="homepage_container">
             <div className="homepage_banner_container">
@@ -41,17 +31,10 @@ export default function HomePage(){
             <div className="trending_video_container">
                 <div className="trending_video_header">See what's been trending for free in the VidCloud community</div>
                 <div className="trending_gallery_container">
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                                                  
+                    {data?.map((item)=>{
+                        return <div className="trending_video">{item.snippet.title}</div>
+
+                    })}
                 </div>
             </div>
 
