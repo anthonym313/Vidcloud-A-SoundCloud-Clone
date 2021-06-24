@@ -37,6 +37,7 @@ const initialState = {searchResults : []}
 //Reducer
 export default function searchReducer(state = initialState, action){
     switch(action.type){
+        default: return state;
 
         case 'search/GET_RESULTS': {
             const allResults = {};
@@ -49,6 +50,5 @@ export default function searchReducer(state = initialState, action){
                 ...state
             };
         };
-        default: return state;
     };
 }
