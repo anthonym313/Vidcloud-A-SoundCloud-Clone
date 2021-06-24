@@ -33,19 +33,22 @@ export const updateResults = (searchInputData) => async dispatch =>{
     }
 } 
 
-const initialState = {searchResults :[]}
+const initialState = {searchResults : []}
 //Reducer
-const searchReducer = (state = initialState, action) =>{
+export default function searchReducer(state = initialState, action){
     switch(action.type){
+
         case 'search/GET_RESULTS': {
-            const allResults = {}
+            const allResults = {};
             action.searchResults.forEach(result => {
                 allResults[result.items]= result
-            });
+            })
             return {
+                
                 ...allResults,
                 ...state
             };
         };
+        default: return state;
     };
 }

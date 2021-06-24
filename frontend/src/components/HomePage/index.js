@@ -32,7 +32,7 @@ export default function HomePage(){
                 <div className="trending_video_header">See what's been trending for free in the VidCloud community</div>
                 <div className="trending_gallery_container">
                     {data?.map((item)=>{
-                        return <div className="trending_video">{item.snippet.title}</div>
+                        return <div style={{backgroundImage:`url(${item.snippet.thumbnails.default.url})`}}className="trending_video" key={item.id}>{item.snippet.title}</div>
 
                     })}
                 </div>
