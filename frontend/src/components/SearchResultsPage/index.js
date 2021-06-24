@@ -11,7 +11,7 @@ export default function SearchResults(){
                         <li className='searchResult'> this is a returned result</li>
                         <li className='searchResult'> this is a returned result</li>
                         <li className='searchResult'> this is a returned result</li>
-                                            </div>
+                    </div>
                 </div>
             </div>
     )
