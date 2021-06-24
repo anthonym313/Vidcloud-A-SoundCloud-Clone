@@ -5,12 +5,12 @@ const search = (searchResults)=>({
     searchResults
 })
 
-const loadResults = (result)=({
+const loadResults = result=>({
     type:'search/LOADRESULTS',
     result
 });
 
-export const getSearchResults = () => async dispatch =>{
+export const getSearchResults = (searchTerm) => async dispatch =>{
     const response = await fetch(`/api/search/${searchTerm}`)
     if(response.ok){
         const result = await response.json();
@@ -18,8 +18,8 @@ export const getSearchResults = () => async dispatch =>{
     }
 };
 
-Thunk
-export const updateResults = (searchInputData) =>{
+//Thunk
+export const updateResults = (searchInputData) => async dispatch =>{
     const res = await fetch('/api/search/results',{
                 method:'PUT',
                 headers:{'Content-type':'application/json'},
@@ -27,7 +27,7 @@ export const updateResults = (searchInputData) =>{
 
             })
     if(res.ok){
-        const data = await req.json()
+        const data = await res.json()
         dispatch(loadResults(data))
         return data
     }
@@ -44,8 +44,7 @@ const searchReducer = (state = initialState, action) =>{
             });
             return {
                 ...allResults,
-                ...state,
-                searchResults
+                ...state
             };
         };
     };
