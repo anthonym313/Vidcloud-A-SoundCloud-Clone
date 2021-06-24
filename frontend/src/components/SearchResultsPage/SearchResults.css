@@ -24,8 +24,9 @@
 }
 .searchResult{
     margin:20px;
-    height:100px;
-    width:600px;
-    background-color: turquoise;
-    list-style-type: none;
+    height:325px;
+    width:420px;
+    border-color: darkblue;
+    border-width: 3px;
+    
 }

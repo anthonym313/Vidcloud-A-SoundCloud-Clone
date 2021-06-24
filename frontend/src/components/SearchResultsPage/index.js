@@ -10,7 +10,7 @@ export default function SearchResults(){
                 <div className="searchResults_list_container ">
                     <div className='searchResults_list'>
                         {searchItems?.map((item)=>{
-                            return <li className='searchResult'> this is a returned result</li>
+                            return <iframe title={item.snippet.title}className='searchResult' src={`https://www.youtube.com/embed/${item.id.videoId}`}></iframe>
                         })} 
                             
                     
