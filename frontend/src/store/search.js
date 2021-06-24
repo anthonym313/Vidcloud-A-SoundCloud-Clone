@@ -1,8 +1,8 @@
 
-
-const search = (searchResults)=>({
-    type: 'search/GET_RESULTS',
-    searchResults
+const GET_RESULTS = 'search/getResults'
+const getResults = (searchResults)=>({
+    type: GET_RESULTS,
+    searchResults:searchResults,
 })
 
 const loadResults = result=>({
@@ -14,7 +14,7 @@ export const getSearchResults = (searchTerm) => async dispatch =>{
     const response = await fetch(`/api/search/${searchTerm}`)
     if(response.ok){
         const result = await response.json();
-        dispatch(search(result));
+        dispatch(getResults(result));
     }
 };
 
@@ -37,9 +37,8 @@ const initialState = {searchResults : []}
 //Reducer
 export default function searchReducer(state = initialState, action){
     switch(action.type){
-        default: return state;
-
-        case 'search/GET_RESULTS': {
+        
+        case GET_RESULTS: {
             const allResults = {};
             action.searchResults.forEach(result => {
                 allResults[result.items]= result
@@ -50,5 +49,6 @@ export default function searchReducer(state = initialState, action){
                 ...state
             };
         };
+        default: return state;
     };
 }
