@@ -14,7 +14,8 @@ export const getSearchResults = (searchTerm) => async dispatch =>{
     const response = await fetch(`/api/search/${searchTerm}`)
     if(response.ok){
         const result = await response.json();
-        dispatch(getResults(result));
+        console.log(result, 'our result from store')
+        dispatch(getResults(result.items));
     }
 };
 
@@ -33,21 +34,17 @@ export const updateResults = (searchInputData) => async dispatch =>{
     }
 } 
 
-const initialState = {searchResults : []}
+
 //Reducer
-export default function searchReducer(state = initialState, action){
+export default function searchReducer(state = {}, action){
     switch(action.type){
         
         case GET_RESULTS: {
-            const allResults = {};
+            const allResults = {...state};
             action.searchResults.forEach(result => {
-                allResults[result.items]= result
+                allResults[result.id.videoId]= result
             })
-            return {
-                
-                ...allResults,
-                ...state
-            };
+            return allResults;
         };
         default: return state;
     };
