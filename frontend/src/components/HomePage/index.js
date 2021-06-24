@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './homepage.css'
+
+
+// export async function youtubeTrending(){
+    
+//     try{
+
+//         const response = await fetch('/api/')
+//         const result = await response.json()
+//         return{
+//             props:{result}
+//         }
+//     }catch(err){console.log(err)}
+//  }
+ 
 export default function HomePage(){
+  useEffect(()=>{
+    async function youtubeTrending(){
+    
+            try{
+        
+                const response = await fetch('/api/')
+                const result = await response.json()
+                console.log(result.items)
+                
+            }catch(err){console.log(err)}
+         }
+         youtubeTrending()
+  },[])
     return (
         <div className="homepage_container">
             <div className="homepage_banner_container">
@@ -14,6 +41,7 @@ export default function HomePage(){
             <div className="trending_video_container">
                 <div className="trending_video_header">See what's been trending for free in the VidCloud community</div>
                 <div className="trending_gallery_container">
+                    <div className="trending_video">Thumbnail</div>
                     <div className="trending_video">thumbnail</div>
                     <div className="trending_video">thumbnail</div>
                     <div className="trending_video">thumbnail</div>
@@ -23,9 +51,7 @@ export default function HomePage(){
                     <div className="trending_video">thumbnail</div>
                     <div className="trending_video">thumbnail</div>
                     <div className="trending_video">thumbnail</div>
-                    <div className="trending_video">thumbnail</div>
-                   
-                 
+                                                  
                 </div>
             </div>
 

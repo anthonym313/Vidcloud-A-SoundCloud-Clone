@@ -18,16 +18,12 @@ export default function Search() {
 
             })
             const data = await req.json()
-            history.push('/results')
+            history.push('/search/results')
             return data;
         }
     }
     
-    // const submitHelper= async (searchTerm)=>{
-    //     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&type=video&key=${process.env.YOUTUBE_API_KEY}`)
-    //     const result = await response.json()
-    //     console.log(result)
-    // }
+  
     const handleSubmit = (event) =>{
         event.preventDefault()
         submitHelper(searchTerm)

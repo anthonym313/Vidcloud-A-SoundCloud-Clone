@@ -2,6 +2,9 @@ const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const searchRouter = require('./search.js');
+const homeRouter = require('./home.js');
+
+router.use('/', homeRouter);
 
 router.use('/session', sessionRouter);
 
