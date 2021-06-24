@@ -9,7 +9,7 @@ router.use(express.json())
 router.get('/:query', asyncHandler(async(req, res)=>{
     const results = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${req.params.query}}&type=video&key=${process.env.YOUTUBE_API_KEY}`)
     const data = await results.json()
-    res.send(data)
+    return res.send(data)
 
 }))
 router.post('/results',asyncHandler(async(req, res)=>{

@@ -8,18 +8,18 @@ export default function Search() {
     const submitHelper = async(searchTerm)=>{
         const response = await fetch(`/api/search/${searchTerm}`)
         const result = await response.json()
-        // console.log(result)
+        console.log(result)
         
         if(response.ok){
-            const req = await fetch('/api/search/results',{
-                method:'POST',
-                headers:{'Content-type':'application/json'},
-                body:JSON.stringify({result}),
+            // const req = await fetch('/api/search/results',{
+            //     method:'POST',
+            //     headers:{'Content-type':'application/json'},
+            //     body:JSON.stringify({result}),
 
-            })
-            const data = await req.json()
+            // })
+            // const data = await req.json()
             history.push('/search/results')
-            return data;
+            // return data;
         }
     }
     
