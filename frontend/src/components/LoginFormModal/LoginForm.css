@@ -36,3 +36,8 @@
     color:red;
 }
 
+#loginButton{
+    background: transparent;
+    color:#fff;
+    border-color:#ccc;
+}
