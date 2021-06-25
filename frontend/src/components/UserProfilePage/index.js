@@ -1,22 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import {uploadVideo} from 
+import {uploadVideo} from '../../store/video';
+import {useHistory} from 'react-router-dom';
 
 import './UserProfilePage.css'
 
 export default function UserProfile(){
-    const sessionUser = useSelector((state)=> state.session.user)
+    const sessionUser = useSelector(state=> state.session.user)
     const dispatch = useDispatch();
+    const history = useHistory();
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
 
-    const handleSubmit = async(e)=>{
+    const handleSubmit = (e)=>{
         e.preventDefault();
         const payload={
             title,
             url
         }
-        const video = await dispatch(uploadVideo(payload))
+        dispatch(uploadVideo(payload))
+        
     }
     return(
         <div className='profilePage_container'>
@@ -54,7 +57,6 @@ export default function UserProfile(){
                     </label>
                     <br></br>
                     <button type='submit'>Add Video</button>
-                    <input button onClick={}>Cancel</input>
                 </form>
             </section>
         </div>

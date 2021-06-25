@@ -3,6 +3,7 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const searchRouter = require('./search.js');
 const homeRouter = require('./home.js');
+const videoRouter = require('./video.js')
 
 router.use('/', homeRouter);
 
@@ -11,6 +12,8 @@ router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
 router.use('/search', searchRouter)
+
+router.use('/video', videoRouter)
 
 //////////********* TESTING API USER AUTH *********///////////////
 // const asyncHandler = require('express-async-handler');
