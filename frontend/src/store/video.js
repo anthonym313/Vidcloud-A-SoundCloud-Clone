@@ -1,3 +1,5 @@
+import {csrfFetch} from './csrf';
+
 const ADD_ONE = 'video/ADD_ONE';
 const LOAD = 'video/LOAD';
 
@@ -9,22 +11,21 @@ const addOneVideo = video => ({
 const load = vidList => ({
     type: LOAD,
     vidList,
-  });
+});
 
   
+//Thunks
 export const getUserVideos = (id) => async dispatch =>{
-    const response = await fetch(`/api/video/:${id}`)
+    const response = await csrfFetch(`/api/video/${id}`)
     if (response.ok){
         const vidList = await response.json();
         dispatch(load(vidList));
     }
 }
 
-//Thunks
 export const uploadVideo = (payload) => async dispatch=>{
-    const res = await fetch(`/api/video`,{
+    const res = await csrfFetch(`/api/video`,{
         method:'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     })
 

@@ -1,25 +1,33 @@
-import React,{useState} from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import {uploadVideo} from '../../store/video';
+import React,{useEffect, useState} from 'react';
+import { useSelector , useDispatch } from 'react-redux';
+import {uploadVideo , getUserVideos} from '../../store/video';
 import {useHistory} from 'react-router-dom';
 
 import './UserProfilePage.css'
 
 export default function UserProfile(){
     const sessionUser = useSelector(state=> state.session.user)
+    
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
 
+    useEffect(()=>{
+        dispatch(getUserVideos(sessionUser.id))
+    },[dispatch])
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         const payload={
+            userId:sessionUser.id,
             title,
             url
         }
-        dispatch(uploadVideo(payload))
-        
+        const video = dispatch(uploadVideo(payload))
+        if(video){
+            history.push('/user')
+        }
     }
     return(
         <div className='profilePage_container'>
