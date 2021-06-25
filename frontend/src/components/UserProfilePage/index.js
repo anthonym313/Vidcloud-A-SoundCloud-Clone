@@ -33,7 +33,9 @@ export default function UserProfile(){
     return(
         <div className='profilePage_container'>
             <div className='profile_banner_container' >
-                <div className='profile_image'></div>   
+                <div className='profile_image'>
+                    <img src='https://www.kindpng.com/picc/m/24-248325_profile-picture-circle-png-transparent-png.png'></img>
+                </div>   
                 <div className='profile_banner_user'>
                     <h2>{sessionUser.username}</h2>
                 </div>
