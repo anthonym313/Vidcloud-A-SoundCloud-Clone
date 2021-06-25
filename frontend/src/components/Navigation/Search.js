@@ -8,24 +8,11 @@ export default function Search() {
     const [searchTerm, setSearchTerm] = useState('');
     const history = useHistory()
     const dispatch = useDispatch()
-    // const submitHelper = async(searchTerm)=>{
-        
-        //     if(response.ok){
-            //         // const req = await fetch('/api/search/results',{
-                //         //     method:'POST',
-                //         //     headers:{'Content-type':'application/json'},
-                //         //     body:JSON.stringify({result}),
-                
-                //         // })
-                //         // const data = await req.json()
-                //         // return data;
-                //     }
-                // }
-                
-                
+
     const handleSubmit = (event) =>{
         event.preventDefault()
         dispatch(getSearchResults(searchTerm))
+        window.location.href('/search/results');
         history.push('/search/results')
     }
     return (
