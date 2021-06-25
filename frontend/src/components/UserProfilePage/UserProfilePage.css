@@ -1,12 +1,12 @@
 .profilePage_container{
-    position:relative;
-    top: 50px;
-    margin:auto;
     display:flex;
-    border:lawngreen;
+    flex-direction: column;
+
+    top: 50px;
+
 }
 
 .profile_banner_container{
-    margin:auto;
-    display: flex;
+    height: 340px;
+    background-color: lightcoral;
 }

@@ -30,7 +30,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route>
-            <UserProfile path={`/users/:id`}/>
+            <UserProfile path="/users"/>
           </Route>
         </Switch>
       )}

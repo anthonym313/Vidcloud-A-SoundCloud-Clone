@@ -47,7 +47,8 @@ router.post(
 router.get('/:id', asyncHandler(async(req,res)=>{
   const { id } = req.params.id
   const user = await User.findOne({where:{ id } });
-  return res.send(user)
+  res.locals.path = '/users'
+  return res.render({user})
   
 }));
 
