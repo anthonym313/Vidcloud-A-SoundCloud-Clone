@@ -67,4 +67,18 @@ router.get(
     }
 );
 
+// Demo user
+router.post(
+  '/login/demo',
+  asyncHandler(async (req, res) => {
+    const username = 'Demo-lition'
+    const user = await User.findOne({ where: { username } });
+ 
+    await setTokenCookie(res, user);
+
+    return res.json({
+      user,
+    });
+}));
+
 module.exports = router;
