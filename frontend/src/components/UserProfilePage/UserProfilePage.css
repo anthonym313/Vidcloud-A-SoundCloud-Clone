@@ -1,12 +1,14 @@
 .profilePage_container{
     display:flex;
     flex-direction: column;
-
-    top: 50px;
+    
 
 }
 
 .profile_banner_container{
+    display:flex;
+    flex-direction: row;
     height: 340px;
-    background-color: lightcoral;
+    background-color:rgb(255, 85, 0,0.65);
+    
 }

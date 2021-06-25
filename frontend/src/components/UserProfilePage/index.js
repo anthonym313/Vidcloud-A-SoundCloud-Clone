@@ -7,7 +7,8 @@ import './UserProfilePage.css'
 
 export default function UserProfile(){
     const sessionUser = useSelector(state=> state.session.user)
-    
+    const videosArr = useSelector(state => state.video.vidList);
+    console.log(videosArr)
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState('');
@@ -38,7 +39,18 @@ export default function UserProfile(){
                 </div>
             </div>
             <div className='playlist_container'>
-                <h2>My Playlist</h2>     
+                <h2>My Playlist</h2>
+                <div className='myVideos_list'>
+                    {videosArr?.map((video)=>{
+                        return (
+                        <div className='playlist_item_container'>
+                            <h4>{video.title}</h4>
+                            <iframe title={video.title} src={video.url}></iframe>
+                            <button>Remove Video</button>
+                        </div>
+                        )
+                    })}
+                </div>     
             </div>
             <h3>Upload to Playlist</h3>
             <section className="playlistform">
