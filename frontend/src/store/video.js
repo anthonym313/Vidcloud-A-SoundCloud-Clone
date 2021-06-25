@@ -38,6 +38,18 @@ const initialState = {vidList: []}
 //REDUCER
 export default function videoReducer(state = initialState, action){
     switch(action.type){
+        case LOAD: {
+            const allVideo = {};
+            action.vidList.forEach(video => {
+              allVideo[video.id] = video;
+            });
+            return {
+              ...allVideo,
+              ...state,
+              list: action.list,
+            };
+          }
+        
         case ADD_ONE:{
             if(!state[action.video.id]){
                 const newState ={
