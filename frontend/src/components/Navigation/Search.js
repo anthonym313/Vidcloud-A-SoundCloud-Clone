@@ -12,7 +12,6 @@ export default function Search() {
     const handleSubmit = (event) =>{
         event.preventDefault()
         dispatch(getSearchResults(searchTerm))
-        window.location.href('/search/results');
         history.push('/search/results')
     }
     return (

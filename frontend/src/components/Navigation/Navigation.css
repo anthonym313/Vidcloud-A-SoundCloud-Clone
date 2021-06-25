@@ -5,8 +5,11 @@ ul{
     background-color: #333;
     list-style-type: none;
     max-height: 46px;
-    margin: 0;
     padding: none;
+    z-index: 6600;
+    position: fixed;
+    width:100%;
+    margin-top: 0px;
 }
 .logo-image {
     display:flex;
@@ -43,5 +46,17 @@ body{
     background-color:#ff5500;
     color:whitesmoke;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#createAccountButton{
+    display:flex;
+    background-color: #ff5500;
+    color: white;
+    border-color: #ff5500;
+    border-radius: 3px;
+    text-decoration: none;
+    justify-content: center;
+    padding: 10px;
+
 
 }

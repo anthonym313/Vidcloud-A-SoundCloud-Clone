@@ -19,13 +19,13 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup" >Create Account</NavLink>
+        <NavLink id='createAccountButton' to="/signup" >Create account</NavLink>
       </>
     );
   }
 
   return (
-    <ul>
+    <ul className="navbar_container">
       <li>
         <NavLink exact to="/"><img className='logo-image nav-left'  src='/logo.png' alt='Home'/></NavLink>
       </ li>

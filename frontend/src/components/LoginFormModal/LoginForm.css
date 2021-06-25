@@ -40,4 +40,6 @@
     background: transparent;
     color:#fff;
     border-color:#ccc;
+    border-radius: 3px;
+    min-width: 64px;
 }
