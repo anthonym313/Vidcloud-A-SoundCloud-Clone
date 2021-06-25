@@ -9,7 +9,6 @@ import SearchResults from "./components/SearchResultsPage";
 import UserProfile from "./components/UserProfilePage";
 
 function App() {
-  const userId = useSelector((user)=>(user.session.user.id))
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -31,7 +30,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route>
-            <UserProfile exact path={`/users/${userId}`}/>
+            <UserProfile path={`/users/:id`}/>
           </Route>
         </Switch>
       )}
