@@ -13,11 +13,16 @@ export default function UserProfile(){
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
+    const [showForm, setShowForm] = useState('false');
+    const [profilePic, setProfilePic] = useState('') 
 
     useEffect(()=>{
         dispatch(getUserVideos(sessionUser.id))
     },[dispatch])
-
+    const handleProfilePictureSubmit = (e) =>{
+        e.preventDefault(); 
+        
+    }
     const handleSubmit = (e)=>{
         e.preventDefault();
         const payload={
@@ -34,7 +39,15 @@ export default function UserProfile(){
         <div className='profilePage_container'>
             <div className='profile_banner_container' >
                 <div className='profile_image'>
-                    <img src='https://www.kindpng.com/picc/m/24-248325_profile-picture-circle-png-transparent-png.png'></img>
+                    <img src={profilePic}></img>
+                    <form onSubmit={handleProfilePictureSubmit}>
+                        <input 
+                        type='text'
+                        value={profilePic}
+                        placeholder='imgURL'
+                        onChange={(e)=>setProfilePic(e.target.value)}
+                         ></input>
+                    </form>
                 </div>   
                 <div className='profile_banner_user'>
                     <h2>{sessionUser.username}</h2>
