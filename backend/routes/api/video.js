@@ -19,14 +19,17 @@ router.get('/:id',asyncHandler(async function(req,res){
     return res.json(videos);
 }))
 
-
 //upload  user video
 router.post(
     '/',
     asyncHandler(async function (req, res) {
-      const video = await Video.create(req.body);
-      return res.json(video)
+        const video = await Video.create(req.body);
+        return res.json(video)
     })
-  );
-
+);
+    
+ //delete user video
+ router.delete('/:id', asyncHandler(async function (req,res){
+     const 
+ }))
 module.exports = router;

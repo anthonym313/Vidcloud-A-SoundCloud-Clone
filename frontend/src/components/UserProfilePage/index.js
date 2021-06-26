@@ -13,7 +13,6 @@ export default function UserProfile(){
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
-    const [showForm, setShowForm] = useState('false');
     const [profilePic, setProfilePic] = useState('') 
 
     useEffect(()=>{

@@ -14,11 +14,16 @@
 }
 .profile_image img{
     margin-top: 40px;
+    margin-left: 40px;
     height:175px;
     width:175px;
     border-radius:50%;
     border-color:rgb(255, 85, 0,0.65);
     background-color: grey;
+}
+.profile_image form{
+    margin-left:40px;
+    margin-top: 5px;
 }
 .profile_image{
     display:flex;
