@@ -17,11 +17,8 @@ export default function UserProfile(){
 
     useEffect(()=>{
         dispatch(getUserVideos(sessionUser.id))
-    },[dispatch])
-    const handleProfilePictureSubmit = (e) =>{
-        e.preventDefault(); 
-        
-    }
+    },[dispatch,sessionUser.id])
+   
     const handleSubmit = (e)=>{
         e.preventDefault();
         const payload={
@@ -38,15 +35,7 @@ export default function UserProfile(){
         <div className='profilePage_container'>
             <div className='profile_banner_container' >
                 <div className='profile_image'>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI0PXgAh7ba4WdsiCzZWGTZOZK6OhDOi67mA&usqp=CAU" alt="Profile Image"></img>
-                    <form onSubmit={handleProfilePictureSubmit}>
-                        <input 
-                        type='text'
-                        value={profilePic}
-                        placeholder='imgURL'
-                        onChange={(e)=>setProfilePic(e.target.value)}
-                         ></input>
-                    </form>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI0PXgAh7ba4WdsiCzZWGTZOZK6OhDOi67mA&usqp=CAU" alt="Profile"></img>
                 </div>   
                 <div className='profile_banner_user'>
                     <h2>{sessionUser.username}</h2>
