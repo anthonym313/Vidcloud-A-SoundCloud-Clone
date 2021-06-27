@@ -13,7 +13,7 @@ export default function UserProfile(){
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
-    const [profilePic, setProfilePic] = useState('') 
+    
 
     useEffect(()=>{
         dispatch(getUserVideos(sessionUser.id))
@@ -38,7 +38,7 @@ export default function UserProfile(){
         <div className='profilePage_container'>
             <div className='profile_banner_container' >
                 <div className='profile_image'>
-                    <img src={profilePic}></img>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI0PXgAh7ba4WdsiCzZWGTZOZK6OhDOi67mA&usqp=CAU" alt="Profile Image"></img>
                     <form onSubmit={handleProfilePictureSubmit}>
                         <input 
                         type='text'
