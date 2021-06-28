@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import {uploadVideo , getUserVideos, removeVideo} from '../../store/video';
 import {useHistory} from 'react-router-dom';
-import EditVideoForm from '../EditVideoForm';
+// import EditVideoForm from '../EditVideoForm';
 
 import './UserProfilePage.css'
 

@@ -14,6 +14,8 @@ export default function SearchResults(){
                             <div className="results">
                                 <iframe title={item.snippet.title}className='searchResult' src={`https://www.youtube.com/embed/${item.id.videoId}`}></iframe>
                                 <div>{item.snippet.description}</div>
+                                <br></br>
+                                <button>Favorite</button>
                             </div>
                             )
                         })} 

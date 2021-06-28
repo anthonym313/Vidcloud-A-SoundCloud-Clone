@@ -3,6 +3,7 @@ import {csrfFetch} from './csrf';
 
 const ADD_ONE = 'video/ADD_ONE';
 const LOAD = 'video/LOAD';
+const LOAD_ONE = 'video/LOAD_ONE';
 const REMOVE_ITEM = "video/REMOVE_ITEM";
 const UPDATE_ITEM = "video/UPDATE_ITEM";
 
@@ -11,23 +12,37 @@ const addOneVideo = video => ({
     video,
 });
 
+const loadOne = videoId =>({
+    type:LOAD_ONE,
+    videoId
+})
+
 const load = vidList => ({
     type: LOAD,
     vidList,
 });
+
 const remove = (video) => ({
     type: REMOVE_ITEM,
     video
-    
 
 });
   
 const update = (title) => ({
     type: UPDATE_ITEM,
     title,
-  });
+});
   
 //Thunks
+export const getOneVideo =(id)=> async dispatch =>{
+    const response = await csrfFetch(`api/video/${id}`)
+    if (response.ok){
+        const video = await response.json();
+        dispatch(loadOne(video));
+    }
+}
+
+///Refactor this thunk to go to users page and create new user reducer
 export const getUserVideos = (id) => async dispatch =>{
     const response = await csrfFetch(`/api/video/${id}`)
     if (response.ok){
