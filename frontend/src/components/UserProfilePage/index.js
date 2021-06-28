@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import {uploadVideo , getUserVideos, removeVideo} from '../../store/video';
 import {useHistory} from 'react-router-dom';
+import EditVideoForm from '../EditVideoForm';
 
 import './UserProfilePage.css'
 
@@ -20,10 +21,8 @@ export default function UserProfile(){
     },[dispatch,sessionUser.id])
     
     
-    const handleRemove = (id)=>{
-      
+    const handleRemove = (id)=>{      
         dispatch(removeVideo(id))
-       
     } 
    
     const handleSubmit = (e)=>{
@@ -58,6 +57,7 @@ export default function UserProfile(){
                             <iframe title={video.title} src={video.url}></iframe>
                             <button className='edit-video-button' type='button' onClick={''}>Edit Title</button>
                             <button className="delete-video-button" type="button" onClick={handleRemove(video.id)}>Remove Video</button>
+                            <EditVideoForm  />
                         </div>
                         )
                     })}

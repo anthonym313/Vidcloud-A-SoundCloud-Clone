@@ -1,21 +1,18 @@
 import {useState} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { editItems } from '../../store/video';
 
-export default function EditVideoForm(){
-    const video = useSelector(state => state.video.vidList.id)
+export default function EditVideoForm({videoId}){
     const dispatch = useDispatch();
 
-    const [title, setTitle] = useState(video.title)
+    const [title, setTitle] = useState(videoId,title)
 
     const updateTitle = (e) => setTitle(e.target.value)
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const data = {title};
-
-        const updatedVideo = await dispatch(editItems(data));
-        
+        await dispatch(editItems(data));
     }
 
     return(
