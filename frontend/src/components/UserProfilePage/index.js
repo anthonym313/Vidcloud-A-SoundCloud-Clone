@@ -8,7 +8,6 @@ import './UserProfilePage.css'
 export default function UserProfile(){
     const sessionUser = useSelector(state=> state.session.user)
     const videosArr = useSelector(state => state.video.vidList);
-    console.log(videosArr)
     const dispatch = useDispatch();
     const history = useHistory();
     const [title, setTitle] = useState('');

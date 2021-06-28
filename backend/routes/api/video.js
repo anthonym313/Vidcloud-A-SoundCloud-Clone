@@ -28,8 +28,8 @@ router.post(
     })
 );
     
- //delete user video
- router.delete('/:id', asyncHandler(async function (req,res){
+//  //delete user video
+//  router.delete('/:id', asyncHandler(async function (req,res){
      
- }))
+//  }))
 module.exports = router;

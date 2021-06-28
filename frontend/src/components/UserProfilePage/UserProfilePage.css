@@ -8,23 +8,26 @@
 .profile_banner_container{
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: stretch;
+    align-items: flex-start;
     height: 340px;
     background-color:lightgray;
     
 }
 .profile_image img{
-    margin-top: 40px;
+    margin-top: 60px;
     margin-left: 40px;
-    height:175px;
+    height:160px;
     width:175px;
     border-radius:50%;
     border-color:rgba(255, 85, 0,0.65);
     background-color: grey;
 }
-.profile_image form{
-    margin-left:40px;
-    margin-top: 5px;
+.profile_banner_user{
+    margin-left:80px;
 }
+
 .profile_image{
     display:flex;
     flex-direction:column;
