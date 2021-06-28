@@ -41,7 +41,7 @@ export default function UserProfile(){
         <div className='profilePage_container'>
             <div className='profile_banner_container' >
                 <div className='profile_image'>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI0PXgAh7ba4WdsiCzZWGTZOZK6OhDOi67mA&usqp=CAU" alt="Profile"></img>
+                    <img src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png" alt="Profile"></img>
                 </div>   
                 <div className='profile_banner_user'>
                     <h2>{sessionUser.username}</h2>
