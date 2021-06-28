@@ -57,7 +57,7 @@ export default function UserProfile(){
                             <iframe title={video.title} src={video.url}></iframe>
                             <button className='edit-video-button' type='button' onClick={''}>Edit Title</button>
                             <button className="delete-video-button" type="button" onClick={handleRemove(video.id)}>Remove Video</button>
-                            <EditVideoForm  />
+                        
                         </div>
                         )
                     })}
@@ -75,7 +75,6 @@ export default function UserProfile(){
                         required>
                         </input>
                     </label>
-                    <br></br>
                     <label>
                         Video url
                         <input 
@@ -86,8 +85,7 @@ export default function UserProfile(){
                         required>
                         </input>
                     </label>
-                    <br></br>
-                    <button type='submit'>Add Video</button>
+                    <button id="add_button" type='submit'>Upload Video</button>
                 </form>
             </section>
         </div>

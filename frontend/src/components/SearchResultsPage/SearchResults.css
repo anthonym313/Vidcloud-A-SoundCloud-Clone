@@ -16,7 +16,7 @@
     align-items: center;
 }
 .searchResults_list{
-    max-width: 800px;
+    max-width: 1000px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,3 +30,9 @@
     border-width: 3px;
     
 }
+.results{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+

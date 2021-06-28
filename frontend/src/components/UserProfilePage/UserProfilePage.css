@@ -49,3 +49,20 @@
     align-items:center;
 
 }
+#add_button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:white;
+    background-color: #f50;
+    border-color: white;
+    height: 40px;
+    width:auto;
+
+}
+label input {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding:5px;
+}
+label{
+    margin-bottom: 20px;
+}

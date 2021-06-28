@@ -2,10 +2,10 @@ import {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { editItems } from '../../store/video';
 
-export default function EditVideoForm({videoId}){
+export default function EditVideoForm(){
     const dispatch = useDispatch();
 
-    const [title, setTitle] = useState(videoId,title)
+    const [title, setTitle] = useState(title)
 
     const updateTitle = (e) => setTitle(e.target.value)
 
