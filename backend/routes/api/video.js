@@ -27,9 +27,24 @@ router.post(
         return res.json(video)
     })
 );
+
+//update user video
+router.put('/:id', asyncHandler(async function (req,res){
+    const video = await Video.editItems(req.body);
+    return res.json(video);
+}))
     
-//  //delete user video
-//  router.delete('/:id', asyncHandler(async function (req,res){
-     
-//  }))
+ //delete user video
+ router.delete('/:id', asyncHandler(async function (req,res){
+     const videoId = parseInt(req.params.id,10);
+     const video = await Video.findOne({
+         where:{
+             id:videoId
+            }
+        });
+    
+     res.json({video})
+   
+
+ }))
 module.exports = router;

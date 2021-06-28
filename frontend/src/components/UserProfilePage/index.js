@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import { useSelector , useDispatch } from 'react-redux';
-import {uploadVideo , getUserVideos} from '../../store/video';
+import {uploadVideo , getUserVideos, removeVideo} from '../../store/video';
 import {useHistory} from 'react-router-dom';
 
 import './UserProfilePage.css'
@@ -13,10 +13,18 @@ export default function UserProfile(){
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
     
+    
 
     useEffect(()=>{
         dispatch(getUserVideos(sessionUser.id))
     },[dispatch,sessionUser.id])
+    
+    
+    const handleRemove = (id)=>{
+      
+        dispatch(removeVideo(id))
+       
+    } 
    
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -45,17 +53,18 @@ export default function UserProfile(){
                 <div className='myVideos_list'>
                     {videosArr?.map((video)=>{
                         return (
-                        <div className='playlist_item_container'>
+                        <div key={video.id.toString()} className='playlist_item_container'>
                             <h4>{video.title}</h4>
                             <iframe title={video.title} src={video.url}></iframe>
-                            <button>Remove Video</button>
+                            <button className='edit-video-button' type='button' onClick={''}>Edit Title</button>
+                            <button className="delete-video-button" type="button" onClick={handleRemove(video.id)}>Remove Video</button>
                         </div>
                         )
                     })}
                 </div>     
             </div>
-            <h3>Upload to Playlist</h3>
             <section className="playlistform">
+                <h3>Upload to Playlist</h3>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Title of video

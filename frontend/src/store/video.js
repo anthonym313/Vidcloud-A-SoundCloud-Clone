@@ -1,3 +1,4 @@
+
 import {csrfFetch} from './csrf';
 
 const ADD_ONE = 'video/ADD_ONE';
@@ -14,10 +15,11 @@ const load = vidList => ({
     type: LOAD,
     vidList,
 });
-const remove = (video, id) => ({
+const remove = (video) => ({
     type: REMOVE_ITEM,
-    video,
-    id //video Id
+    video
+    
+
 });
   
 const update = (title) => ({
@@ -33,14 +35,14 @@ export const getUserVideos = (id) => async dispatch =>{
         dispatch(load(vidList));
     }
 }
-export const removeVideo = (video,id) => async dispatch =>{
+export const removeVideo = (id) => async dispatch =>{
     const response = await csrfFetch(`/api/video/${id}`,{
         method:"DELETE",
-        body:JSON.stringify({video, id})
+    
     })
     if (response.ok){
         const video= await response.json();
-        dispatch(remove(video));
+        dispatch(remove(video))
     }
 }
 
@@ -57,8 +59,8 @@ export const uploadVideo = (payload) => async dispatch=>{
       }
 }
 
-export const editItems = (title, newTitle) => async dispatch =>{
-    const res = await csrfFetch(`/api/video/${title}`,{
+export const editItems = (id, newTitle) => async dispatch =>{
+    const res = await csrfFetch(`/api/video/${id}`,{
       method:'PUT',
       body: JSON.stringify(newTitle)
     })
@@ -81,7 +83,7 @@ export default function videoReducer(state = initialState, action){
             return {
               ...allVideo,
               ...state,
-              list: action.list,
+              vidList: action.vidList,
             };
           }
         
@@ -109,7 +111,7 @@ export default function videoReducer(state = initialState, action){
         }
         case REMOVE_ITEM: {
             const newState = { ...state };
-            delete newState[action.video];
+            delete newState[action.video.id];
             return newState;
           }
         default:
